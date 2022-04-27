@@ -1,0 +1,203 @@
+:root {
+  --main-bg-color: #222222;
+  --main-box-color: #111111;
+  --sub-box-color: #000000;
+  --blue-color: #1c90ff;
+  --list-color: #4a4a4a;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+.cont-header {
+  color: white;
+  width: 100%;
+  height: 320px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: url("./images/cover.png") no-repeat;
+  background-position: center -400px;
+  padding-bottom: 10px;
+  z-index: 100;
+}
+
+.cont-header .sub-tit {
+  font-size: 12px;
+  text-align: center;
+}
+
+.cont-header .main-tit {
+  position: relative;
+  font-size: 20px;
+  letter-spacing: 0.4em;
+  margin-top: 0.5em;
+}
+
+.cont-header .main-tit::before {
+  content: "";
+  display: block;
+  width: 120%;
+  height: 5px;
+  background-color: var(--blue-color);
+  opacity: 0.4;
+  position: absolute;
+  z-index: -10;
+  top: 0.5em;
+  margin-left: -1.3em;
+  border-radius: 5px;
+}
+
+.main {
+  width: 1000px;
+  height: 150vh;
+  padding-top: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.main .box {
+  background-color: var(--main-box-color);
+  border-radius: 10px;
+  width: 400px;
+  margin-bottom: 100px;
+}
+
+.box .box-header {
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+.box h3 {
+  color: var(--blue-color);
+  font-size: 60px;
+  font-family: "Montserrat";
+  line-height: 1.3;
+}
+
+.box h6 {
+  color: #fff;
+}
+
+.box ul {
+  background-color: var(--sub-box-color);
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
+}
+
+.box ul li {
+  color: var(--list-color);
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+.box ul li:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--list-color);
+  margin: 0 1em;
+}
+
+.box:nth-child(odd) {
+  position: relative;
+  left: 1%;
+  padding: 0 20px;
+}
+
+.box:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 15px 0 15px 15px;
+  border-color: transparent var(--main-box-color);
+  display: block;
+  width: 0;
+  z-index: 1;
+  right: -15px;
+  top: 45px;
+}
+
+.box:nth-child(even) {
+  position: absolute;
+  right: 1%;
+  padding: 0 20px;
+  margin-top: -130px;
+}
+
+.box:nth-child(2n + 3) {
+  margin-top: 140px;
+}
+
+.box:nth-child(even)::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 15px 15px 15px 0;
+  border-color: transparent var(--main-box-color);
+  display: block;
+  width: 0;
+  z-index: 1;
+  left: -15px;
+  top: 45px;
+}
+
+.box img {
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  position: absolute;
+}
+
+.box:nth-child(odd) img {
+  left: 30px;
+}
+
+.box:nth-child(even) img {
+  right: 30px;
+}
+
+.box:nth-child(odd) .box-header {
+  float: right;
+  text-align: right;
+}
+
+.box ul {
+  clear: both;
+}
+
+/* 파란 축과 포인트 점 */
+
+.axis {
+  background-color: var(--blue-color);
+  width: 7px;
+  height: 100%;
+  position: absolute;
+  top: 460px;
+  left: 50%;
+}
+
+.box::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 4px solid var(--blue-color);
+  background-color: var(--main-bg-color);
+  position: absolute;
+  z-index: 10;
+  top: 55px;
+}
+
+.box:nth-child(odd)::after {
+  right: -62px;
+}
+
+.box:nth-child(even)::after {
+  left: -56px;
+}
