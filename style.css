@@ -14,14 +14,14 @@ body {
   color: white;
   width: 100%;
   height: 320px;
-  position: fixed;
+  /* position: fixed; */
   display: flex;
   justify-content: center;
   align-items: flex-end;
   background: url("./images/cover.png") no-repeat;
   background-position: center -400px;
   padding-bottom: 10px;
-  z-index: 100;
+  /* z-index: 100; */
 }
 
 .cont-header .sub-tit {
@@ -34,11 +34,11 @@ body {
   font-size: 20px;
   letter-spacing: 0.4em;
   margin-top: 0.5em;
+  z-index: 10;
 }
 
 .cont-header .main-tit::before {
   content: "";
-  display: block;
   width: 120%;
   height: 5px;
   background-color: var(--blue-color);
@@ -53,7 +53,7 @@ body {
 .main {
   width: 1000px;
   height: 150vh;
-  padding-top: 400px;
+  padding-top: 100px;
   position: relative;
   margin: 0 auto;
 }
@@ -175,9 +175,9 @@ body {
 .axis {
   background-color: var(--blue-color);
   width: 7px;
-  height: 100%;
+  height: 120%;
   position: absolute;
-  top: 460px;
+  top: 160px;
   left: 50%;
 }
 
