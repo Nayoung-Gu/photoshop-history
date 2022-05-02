@@ -1,3 +1,5 @@
+/* variables */
+
 :root {
   --main-bg-color: #222222;
   --main-box-color: #111111;
@@ -5,6 +7,8 @@
   --blue-color: #1c90ff;
   --list-color: #5c5c5c;
 }
+
+/* layout */
 
 .header {
   background: url("./images/cover.png") no-repeat;
@@ -20,6 +24,29 @@
   text-align: center;
   color: white;
 }
+
+.main .wrapper {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.wrapper .timeline {
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+.timeline .timeline-item {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 25px;
+  position: relative;
+}
+
+.timeline .timeline-item:nth-child(even) {
+  margin-left: auto;
+}
+
+/* components */
 
 .header .sub-tit {
   font-size: 15px;
@@ -52,26 +79,6 @@
 .main {
   background-color: var(--main-bg-color);
   padding: 50px 0 100px;
-}
-
-.main .wrapper {
-  width: 800px;
-  margin: 0 auto;
-}
-.wrapper .timeline {
-  padding-top: 80px;
-  overflow: hidden;
-}
-
-.timeline .timeline-item {
-  width: 50%;
-  box-sizing: border-box;
-  padding: 0 25px;
-  position: relative;
-}
-
-.timeline .timeline-item:nth-child(even) {
-  margin-left: auto;
 }
 
 .timeline-item .year {
@@ -194,4 +201,36 @@
   position: absolute;
   left: 0;
   top: 2px;
+}
+
+/* responsive */
+
+@media screen and (max-width: 600px) {
+  .year::after {
+    content: "";
+    display: none;
+  }
+
+  .timeline-item::before {
+    content: "";
+    display: none;
+  }
+
+  .main .wrapper {
+    width: 100%;
+  }
+
+  .main .wrapper .timeline {
+    padding: 50px 20px;
+    width: 90%;
+  }
+
+  .timeline .timeline-item:nth-child(even) {
+    margin: 70px 0;
+  }
+
+  .timeline-item .year::before {
+    content: "";
+    display: none;
+  }
 }
